@@ -1,0 +1,52 @@
+.employee-card {
+  background: #ffffff; /* Fundo branco */
+  border: 1px solid #ccc; /* Borda cinza clara */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Texto centralizado */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: transform 0.2s, box-shadow 0.2s; /* Transição para hover */
+  margin: 10px; /* Espaçamento externo */
+}
+
+.employee-card:hover {
+  transform: scale(1.05); /* Aumentar levemente no hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+}
+
+.employee-card h2 {
+  margin: 0; /* Sem margem */
+  font-size: 18px; /* Tamanho da fonte */
+  color: #333; /* Cor do texto */
+  font-family: 'Arial', sans-serif; /* Família da fonte */
+}
+
+.employee-card p {
+  margin: 5px 0 0; /* Margem em cima e embaixo */
+  font-size: 14px; /* Tamanho da fonte */
+  color: #666; /* Cor do texto */
+  font-family: 'Arial', sans-serif; /* Família da fonte */
+}
+
+.employee-card-img {
+  border-radius: 50%; /* Imagem circular */
+  width: 80px; /* Largura da imagem */
+  height: 80px; /* Altura da imagem */
+  object-fit: cover; /* Ajustar imagem */
+  margin-bottom: 10px; /* Espaçamento abaixo da imagem */
+}
+
+.employee-card .edit-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.employee-card .edit-button:hover {
+  background-color: #0056b3;
+}
