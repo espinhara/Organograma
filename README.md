@@ -2,6 +2,7 @@
 
 Este projeto é uma aplicação web para gerenciar o organograma de uma empresa. Ele permite adicionar, editar e visualizar a estrutura hierárquica dos funcionários.
 
+![home](./home.png)
 ## Tecnologias Utilizadas
 
 - **Frontend**: React.js
