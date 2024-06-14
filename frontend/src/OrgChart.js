@@ -20,7 +20,7 @@ function OrgChart() {
         const subordinates = employees.filter(emp => emp.manager_id === employee.id);
         return (
             <li key={employee.id}>
-                <EmployeeCard employee={employee} onRemove={(id) => setEmployees(employees.filter(f => f.id != id))} />
+                <EmployeeCard employee={employee} onRemove={(id) => setEmployees(employees.filter(f => f.id !== id))} />
                 {subordinates.length > 0 && (
                     <ul>
                         {subordinates.map(sub => renderTree(sub))}

@@ -39,7 +39,7 @@ const EmployeeCard = ({ employee, onRemove }) => {
             <p>{employee.position}</p>
             <p>{employee.email}</p>
             <Link to={`/edit/${employee.id}`} className="edit-button">Editar</Link>
-            {employee.id != 1 && <button onClick={handleRemove}>Remover</button>}
+            {employee.id !== 1 && <button onClick={handleRemove}>Remover</button>}
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import OrgChart from './OrgChart';
 import AddEmployee from './AddEmployee';
 import EditEmployee from './EditEmployee';
