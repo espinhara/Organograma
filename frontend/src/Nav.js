@@ -5,10 +5,10 @@ import './Nav.css';
 const Nav = () => {
     return (
         <nav className="navbar">
-            <h2 className="navbar-logo">Company Org Chart</h2>
+            <h2 className="navbar-logo">Life Medic</h2>
             <ul className="navbar-links">
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/add">Add Employee</Link></li>
+                <li><Link to="/add">Adicionar Funcionário</Link></li>
             </ul>
         </nav>
     );
