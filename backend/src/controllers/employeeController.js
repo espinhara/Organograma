@@ -1,6 +1,21 @@
 const knex = require('knex')(require('../../knexfile.js').development);
-
+const cloudinary = require('../config/cloudinaryConfig.js');
+const fs = require('fs');
 // Adicione esta função no controlador de funcionários
+exports.uploadPhoto = async (req, res) => {
+    try {
+        const file = req.file.path;
+        const result = await cloudinary.uploader.upload(file, {
+            folder: 'system/employee_photos'
+        });
+        fs.unlinkSync(file); // Remove file from local server after upload
+        res.json({ url: result.secure_url });
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to upload image' });
+    }
+};
+
+
 exports.addEmployee = async (req, res) => {
     try {
         const [id] = await knex('employees').insert(req.body);
