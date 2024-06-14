@@ -20,7 +20,7 @@ function OrgChart() {
         const subordinates = employees.filter(emp => emp.manager_id === employee.id);
         return (
             <li key={employee.id}>
-                <EmployeeCard employee={employee} />
+                <EmployeeCard employee={employee} onRemove={(id) => setEmployees(employees.filter(f => f.id != id))} />
                 {subordinates.length > 0 && (
                     <ul>
                         {subordinates.map(sub => renderTree(sub))}
@@ -33,10 +33,13 @@ function OrgChart() {
     const topLevelEmployees = employees.filter(emp => emp.manager_id === null);
 
     return (
-        <div className="org-chart">
-            <ul>
-                {topLevelEmployees.map(emp => renderTree(emp))}
-            </ul>
+        <div className='main'>
+            <div className="org-chart">
+                <ul>
+                    {topLevelEmployees.map(emp => renderTree(emp))}
+                </ul>
+            </div>
+
         </div>
     );
 }
