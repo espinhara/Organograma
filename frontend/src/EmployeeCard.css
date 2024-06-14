@@ -2,11 +2,11 @@
   background: #ffffff; /* Fundo branco */
   border: 1px solid #ccc; /* Borda cinza clara */
   border-radius: 10px; /* Bordas arredondadas */
-  padding: 20px; /* Espaçamento interno */
+  padding: 10px; /* Espaçamento interno */
   text-align: center; /* Texto centralizado */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
   transition: transform 0.2s, box-shadow 0.2s; /* Transição para hover */
-  margin: 10px; /* Espaçamento externo */
+  margin: 5px; /* Espaçamento externo */
 }
 
 .employee-card:hover {
@@ -34,6 +34,7 @@
   height: 80px; /* Altura da imagem */
   object-fit: cover; /* Ajustar imagem */
   margin-bottom: 10px; /* Espaçamento abaixo da imagem */
+  cursor: pointer;
 }
 
 .employee-card .edit-button {
