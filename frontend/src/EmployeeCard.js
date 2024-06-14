@@ -5,30 +5,41 @@ import './EmployeeCard.css';
 
 const EmployeeCard = ({ employee, onRemove }) => {
     const handleRemove = async () => {
-        const confirmRemove = window.confirm(`Are you sure you want to remove ${employee.name}?`);
+        const confirmRemove = window.confirm(`Você tem certeza que deseja remover ${employee.name}?`);
         if (confirmRemove) {
             try {
                 await axios.delete(`http://localhost:3001/employees/${employee.id}`);
-                alert('Employee removed successfully');
+                alert('Funcionário removido com sucesso');
                 onRemove(employee.id);
             } catch (error) {
-                alert('Failed to remove employee');
+                alert('Falha ao remover funcionário');
                 console.error(error);
             }
         }
     };
 
     return (
+
         <div className="employee-card">
-            <img
-                src={`https://ui-avatars.com/api/?name=${employee.name}&background=random`}
-                alt={employee.name}
-                className="employee-card-img"
-            />
+            {employee.photo ?
+                <img
+                    onClick={() => { window.location = `/employee/${employee.id}` }}
+                    src={employee.photo}
+                    alt={employee.name}
+                    className="employee-card-img"
+                /> :
+                <img
+                    onClick={() => { window.location = `/employee/${employee.id}` }}
+                    src={`https://ui-avatars.com/api/?name=${employee.name}&background=random`}
+                    alt={employee.name}
+                    className="employee-card-img"
+                />
+            }
             <h2>{employee.name}</h2>
             <p>{employee.position}</p>
-            <Link to={`/edit/${employee.id}`} className="edit-button">Edit</Link>
-            <button onClick={handleRemove}>Remove</button>
+            <p>{employee.email}</p>
+            <Link to={`/edit/${employee.id}`} className="edit-button">Editar</Link>
+            {employee.id != 1 && <button onClick={handleRemove}>Remover</button>}
         </div>
     );
 };
