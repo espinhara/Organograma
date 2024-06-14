@@ -1,39 +1,81 @@
+.main {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  background: #f5f5f5;
+  margin: 0;
+}
+
 .org-chart {
-  display: flex;
-  justify-content: center;
-  margin: 20px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 0;
 }
 
 .org-chart ul {
   padding-top: 20px;
   position: relative;
   transition: all 0.5s;
-  text-align: center; /* Centralizar texto */
+  /* Centralizar texto */
 }
 
 .org-chart li {
-  float: left;
+  display: inline-table;
   text-align: center;
   list-style-type: none;
   position: relative;
-  padding: 20px 5px 0 5px;
+  padding: 10px;
   transition: all 0.5s;
 }
 
-.org-chart li::before, .org-chart li::after {
+.org-chart li::before,
+.org-chart li::after {
   content: '';
   position: absolute;
   top: 0;
   right: 50%;
   border-top: 2px solid #ccc;
-  width: 50%;
-  height: 20px;
+  width: 51%;
+  height: 10px;
 }
 
 .org-chart li::after {
   right: auto;
   left: 50%;
-  border-left: 2px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
+.org-chart li:first-child:before,
+.org-chart li:last-child:after {
+  border: 0 none;
+}
+
+.org-chart li:first-child:after {
+  border-radius: 5px 0px 0px 0px;
+}
+
+.org-chart li:last-child:before {
+  border-right: 2px solid #ccc;
+  border-radius: 0px 5px 0px 0px;
+}
+
+.org-chart li:only-child:after,
+.org-chart li:only-child:before {
+  display: none;
+}
+
+.org-chart li:only-child {
+  padding-top: 0;
+}
+
+.org-chart a {
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: inline-grid;
+  border-radius: 5px;
+  text-decoration-line: none;
+  transition: 5ms;
 }
 
 .org-chart ul ul::before {
@@ -41,7 +83,7 @@
   position: absolute;
   top: 0;
   left: 50%;
-  border-left: 2px solid #ccc;
+  border-left: 1px solid #ccc;
   width: 0;
   height: 20px;
 }
@@ -58,10 +100,11 @@
   transition: all 0.5s;
 }
 
-.org-chart li a:hover, .org-chart li a:hover + ul li a {
+.org-chart li a:hover,
+.org-chart li a:hover+ul li a {
   background: #ccc;
   color: #000;
-  border: 2px solid #aaa;
+  border: 5px solid #aaa;
 }
 
 @media (min-width: 600px) {
@@ -98,7 +141,7 @@
   position: relative;
 }
 
-.org-chart .subordinates > div:not(:last-child)::after {
+.org-chart .subordinates>div:not(:last-child)::after {
   content: "";
   width: 2px;
   height: 100%;
@@ -109,7 +152,7 @@
   transform: translateX(50%);
 }
 
-.org-chart .subordinates > div:not(:last-child)::before {
+.org-chart .subordinates>div:not(:last-child)::before {
   content: "";
   width: 50%;
   height: 2px;
@@ -120,7 +163,7 @@
   transform: translateX(50%);
 }
 
-.org-chart .subordinates > div:not(:first-child)::before {
+.org-chart .subordinates>div:not(:first-child)::before {
   content: "";
   width: 50%;
   height: 2px;
@@ -131,14 +174,14 @@
   transform: translateX(-50%);
 }
 
-.org-chart .subordinates > div:first-child .connector::before {
+.org-chart .subordinates>div:first-child .connector::before {
   display: none;
 }
 
-.org-chart .subordinates > div:first-child::before {
+.org-chart .subordinates>div:first-child::before {
   display: none;
 }
 
-.org-chart .subordinates > div:last-child .connector::after {
+.org-chart .subordinates>div:last-child .connector::after {
   display: none;
 }
