@@ -1,6 +1,13 @@
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #f4f4f4 !important;
+}
+
 .form-container {
-  max-width: 500px;
+  max-width: 540px;
   margin: 0 auto;
+  margin-top: 20px;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 10px;
@@ -17,9 +24,22 @@
 .form-container form {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-container-view form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .form-container label {
+  margin-bottom: 10px;
+  font-family: 'Arial', sans-serif;
+  color: #555;
+}
+
+.form-container-view label {
   margin-bottom: 10px;
   font-family: 'Arial', sans-serif;
   color: #555;
@@ -32,6 +52,8 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .form-container button {
@@ -45,6 +67,36 @@
   transition: background-color 0.3s;
 }
 
+.form-container-view button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
 .form-container button:hover {
   background-color: #0056b3;
+}
+
+.form-container-view button:hover {
+  background-color: #0056b3;
+}
+
+form .employee-card-img {
+  margin-left: 42%;
+  justify-content: center;
+}
+
+.form-container-view {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
