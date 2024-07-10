@@ -114,7 +114,5 @@ Este projeto é uma aplicação web para gerenciar o organograma de uma empresa.
 
 ## Licença
 
-## Licença
-
 Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE.txt) para mais detalhes.
 
